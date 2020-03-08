@@ -105,7 +105,6 @@ let app;
             //Creates a new task
             $("#task").clone().appendTo("#taskList");
             //Sets the text of the new task to the text entered into the text input field
-            console.log($("li").last());
             $("li").last().find("span#taskText").text($("#taskTextInput").val());
             //Clears the text input box
             $("#taskTextInput").val("");
