@@ -29,7 +29,7 @@ let app;
      */
     function Start()
     {
-       PageSwitcher();
+        PageSwitcher();
 
         Main();
     }
@@ -47,12 +47,12 @@ let app;
         {
             pageName = "index";
         }
-       
+        
 
-       switch(pageName)
+        switch(pageName)
         {
             case "index":
-               DisplayHomePageContent();
+                DisplayHomePageContent();
                 break;
             case "products":
                 DisplayProductsContent();
@@ -102,17 +102,23 @@ let app;
 
         // Task 1 a
         $("#newTaskButton").on("click", function(){
-            
+            //Creates a new task
+            $("#task").clone().appendTo("#taskList");
+            //Sets the text of the new task to the text entered into the text input field
+            console.log($("li").last());
+            $("li").last().find("span#taskText").text($("#taskTextInput").val());
+            //Clears the text input box
+            $("#taskTextInput").val("");
         });
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
-           
+            
         });
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
-           
+            
         });
     }
 
@@ -261,7 +267,7 @@ let app;
 
         $("#loginForm").submit  ((e)=>
         {
-           
+            
             e.preventDefault();
             e.stopPropagation();
             $("#loginForm")[0].reset();
@@ -283,7 +289,7 @@ let app;
      */
     function Main()
     {
-       
+        
     }
     
     
