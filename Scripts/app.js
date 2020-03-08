@@ -113,7 +113,23 @@ let app;
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
-            
+            //Shows the text box used to edit the task text
+            let editBox = $(this).closest("li").find("input").show();
+            editBox.focus();
+            //A keypress event for the task text edit box
+            $(editBox).keypress(function(event){
+                //A variable that records the key pressed by the user
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+
+                //If the key pressed by the user is the enter key
+                if (keycode == '13')
+                {
+                    //Sets the text of the task to whatever was entered into the edit text box by the user
+                    $(this).closest("li").find("span#taskText").text($(editBox).val());
+                    //Hides the edit text box once again
+                    editBox.hide();
+                }
+            });
         });
 
         // Task 1 c
