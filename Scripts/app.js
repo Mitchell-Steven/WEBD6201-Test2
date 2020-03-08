@@ -134,7 +134,11 @@ let app;
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
-            
+            //Asks the user if they are sure they would like to delete the task and deletes it if they click OK
+            if (confirm("Are your sure you would like to delete this task?"))
+            {
+                $(this).closest("li").remove();
+            }
         });
     }
 
